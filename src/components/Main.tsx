@@ -1,6 +1,7 @@
 import { Component } from "react";
-import Header from "./Header";
-import SearchBar from "./SearchBar";
+
+
+
 
 interface ImageData {
     alt_description: "white modern cement building under blue sky";
@@ -39,11 +40,12 @@ class Main extends Component<Props, State> {
     render() {
         console.log(this.state);
       return(
-        <main>
-            <SearchBar />
+          
+        <main className="fr w-100 pa2">
             {this.state.imagesData.map(imageData => 
-                <div>
-                    <img key={imageData.id} src={imageData.urls.regular} alt={imageData.alt_description} />
+                <div className="bg-light-grey br1 grow ma1
+                shadow-5 fr w-40  br3">
+                    <img key={imageData.id} src={imageData.urls.regular} alt={imageData.alt_description} className="br3 w-100" />
                 </div>
                 )}
         </main>
