@@ -1,13 +1,14 @@
-import React from 'react';
-import Main from "./components/Main"
+import React from "react";
+import Main from "./components/Main";
+import Sidebar from "./components/SIdebar";
 
 function App() {
   return (
     <div>
-       <Main/>
+      <Sidebar />
+      <Main />
     </div>
-  
   );
 }
-      
+
 export default App;
