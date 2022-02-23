@@ -1,12 +1,7 @@
 *{
-  font-family: sans-serif;
-  font-weight: 600;
-  color: #3fb6ac;
-  text-align: center;
+  padding: 0;
+  margin: 9;
+  box-sizing: border-box;
 }
 
 
-body{
-  background-image: linear-gradient(to left, rgb(84, 225, 230)1%, rgb(34, 240, 144)99%)
-  
-}

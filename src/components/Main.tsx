@@ -1,4 +1,6 @@
 import { Component } from "react";
+import Header from "./Header";
+import SearchBar from "./SearchBar";
 
 interface ImageData {
     alt_description: "white modern cement building under blue sky";
@@ -8,8 +10,7 @@ interface ImageData {
         full: string;
         raw: string;
         regular: string;
-    }
-   
+    }  
 }
 
 interface Props {}
@@ -39,6 +40,7 @@ class Main extends Component<Props, State> {
         console.log(this.state);
       return(
         <main>
+            <SearchBar />
             {this.state.imagesData.map(imageData => 
                 <img key={imageData.id} src={imageData.urls.regular} alt={imageData.alt_description} />)}
         </main>
