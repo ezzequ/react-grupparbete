@@ -1,0 +1,23 @@
+.sidebar {
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  left: 0;
+  background-color: #a0e1c2;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  color: black;
+  font-size: 1.4rem;
+}
+
+.button {
+  border: none;
+  color: black;
+  padding: 0.5rem;
+  border-radius: 7%;
+  cursor: pointer;
+}
