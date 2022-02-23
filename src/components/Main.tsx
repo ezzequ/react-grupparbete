@@ -42,7 +42,10 @@ class Main extends Component<Props, State> {
         <main>
             <SearchBar />
             {this.state.imagesData.map(imageData => 
-                <img key={imageData.id} src={imageData.urls.regular} alt={imageData.alt_description} />)}
+                <div>
+                    <img key={imageData.id} src={imageData.urls.regular} alt={imageData.alt_description} />
+                </div>
+                )}
         </main>
         );  
     }
