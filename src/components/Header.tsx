@@ -1,12 +1,10 @@
 
 
+
 export default function Header(){
     return (
         headerComponent()
-       
     )
-
-
 }
 
 
@@ -21,10 +19,4 @@ function headerComponent(){
         </div>
     </div>
     )
-
-
-
-
-
-
 }
