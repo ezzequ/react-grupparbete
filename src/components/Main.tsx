@@ -44,8 +44,6 @@ class Main extends Component<Props, State> {
         </main>
         );  
     }
-
-
 }
 
 export default Main;
