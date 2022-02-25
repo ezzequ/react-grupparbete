@@ -1,13 +1,22 @@
 import React from "react";
 import Main from "./components/Main";
 import Sidebar from "./components/SIdebar";
+import SearchBar from "./components/SearchBar";
+import Header from "./components/Header";
+import './App.css';
 
 function App() {
   return (
-    <div>
-      <Sidebar />
-      <Main />
-    </div>
+    <>
+    
+    <Header></Header>
+    <SearchBar></SearchBar>
+      <Main/>
+      <Sidebar/>
+      
+      
+      
+    </>
   );
 }
 

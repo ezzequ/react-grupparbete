@@ -11,7 +11,7 @@ export default function Header(){
 
 function headerComponent(){
    return(
-    <div className="bg-light-yellow dib fl w-100 b-green"> 
+    <div className="white fl w-100 tc"> 
         <div>
             <h2>Photograph Grind</h2>
             <p>a website for photograpers to find inspiration, learn more about lences to capture the moment in the right setting</p>
