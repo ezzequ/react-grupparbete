@@ -6,8 +6,9 @@ interface Props {
 
 function Board(props: Props) {
   return (
-    <div>
-      <button className="btn">{props.text}</button>
+    <div className="card">
+      <p>{props.text}</p>
+      <button className="btn">Se tavla</button>
     </div>
   );
 }
