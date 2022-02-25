@@ -1,5 +1,6 @@
 import { Component, CSSProperties } from "react"
-import InfiniteScroll from "react-infinite-scroll-component";
+import "./photoCard.css"
+
 
 interface Props {}
 interface State {
@@ -27,7 +28,7 @@ class PhotoCard extends Component<Props, State> {
 
 
     async componentDidMount() {
-        const url = 'https://api.unsplash.com/search/photos?page=10&per_page=30&query=blackandwhite';
+        const url = 'https://api.unsplash.com/search/photos?page=1&per_page=50&query=blackandwhite';
         const response = await fetch(url, {
             headers: {
                 "authorization": "Client-ID atOI9pA6vM7-48sURp4sfveE-vt7pSu99waKjQ5GWUc"
@@ -42,10 +43,10 @@ class PhotoCard extends Component<Props, State> {
         
         return(
         
-            <div className="photos-container">
+            <div style={photoContainerStyle}>
                 {this.state.imagesData.map(imageData => 
-                    <div style={photoCardStyle} className="bg-light-grey br1 grow ma1 shadow-5 fr w-40  br3">
-                        <img key={imageData.id} src={imageData.urls.regular} alt={imageData.alt_description} className="br3 w-100" />
+                    <div className="photo-card bg-light-grey br1 grow ma2 shadow-5 fr br3">
+                        <img key={imageData.id} src={imageData.urls.regular} alt={imageData.alt_description} className="br3" />
                     </div>
                 )}
             </div>
@@ -55,9 +56,13 @@ class PhotoCard extends Component<Props, State> {
 
 }
 
-const photoCardStyle: CSSProperties = {
-    display: "flex",
-    flexWrap: "wrap"
+const photoContainerStyle: CSSProperties = {
+    width: "100%",
+    height: "100vh",
+    display: "grid",
+    gridTemplateColumns: "repeat(6, 20rem [col-start])",
+    gridAutoRows: "",
+    justifyContent: "center"
 }
 
 export default PhotoCard;

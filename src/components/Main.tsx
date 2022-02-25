@@ -1,5 +1,6 @@
-import { Component } from "react";
+import { Component, CSSProperties } from "react";
 import PhotoCard from "./PhotoCard";
+import "./photoCard.css";
 
 
 interface Props {};
@@ -16,11 +17,13 @@ class Main extends Component {
     render() {
         console.log(this.state);
       return(
-        <main className="fr w-100 pa2">
-           <PhotoCard />
+        <main className="fr w-100 h-100 pa2">
+                <PhotoCard />
         </main>
         );  
     }
 }
+
+
 
 export default Main;
