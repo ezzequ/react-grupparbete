@@ -3,7 +3,7 @@ import Board from "./Board";
 import "./Sidebar.css";
 
 function Sidebar() {
-  const [components, setComponents] = useState([""]);
+  const [components, setComponents] = useState<string[]>([]);
   const [title, setTitle] = useState("");
 
   function addComponent() {
@@ -26,8 +26,8 @@ function Sidebar() {
       <button onClick={addComponent} className="button" id={title}>
         ➕ Ny tavla
       </button>
-      {components.map((item, i) => (
-        <Board text={item} />
+      {components.map((component, i) => (
+        <Board text={component} />
       ))}
     </nav>
   );
