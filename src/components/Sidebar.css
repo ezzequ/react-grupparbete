@@ -20,11 +20,15 @@
   padding: 0.5rem;
   border-radius: 7%;
   cursor: pointer;
+  margin-top: 1rem;
 }
-input{
-
+input {
   border-radius: 30px;
-  border:none;
+  border: none;
   padding: 10px;
   margin: 10px;
+}
+
+.label-title {
+  margin-bottom: 0.3rem;
 }

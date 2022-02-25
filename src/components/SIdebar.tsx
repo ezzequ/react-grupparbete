@@ -2,10 +2,9 @@ import { useState } from "react";
 import Board from "./Board";
 import "./Sidebar.css";
 
-
 function Sidebar() {
   const [components, setComponents] = useState([""]);
-  const [title, setTitle] = useState(""); 
+  const [title, setTitle] = useState("");
 
   function addComponent() {
     setComponents([...components, title]);
@@ -13,8 +12,10 @@ function Sidebar() {
 
   return (
     <nav className="sidebar w fl-10">
-      <h3 className="title">Mina anslagstavlor</h3>
-      <label htmlFor="title">Title</label>
+      <h3 className="title">📌 Mina anslagstavlor</h3>
+      <label className="label-title" htmlFor="title">
+        Title
+      </label>
       <input
         id="title"
         type="text"
