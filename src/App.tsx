@@ -12,7 +12,7 @@ function App() {
     <Header></Header>
     <SearchBar></SearchBar>
       <Main/>
-      <Sidebar/>
+      {/* <Sidebar/> */}
       
       
       
