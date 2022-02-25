@@ -1,4 +1,5 @@
 import { Component, CSSProperties } from "react"
+import InfiniteScroll from "react-infinite-scroll-component";
 
 interface Props {}
 interface State {
@@ -38,7 +39,9 @@ class PhotoCard extends Component<Props, State> {
 
 
     render() {
+        
         return(
+        
             <div className="photos-container">
                 {this.state.imagesData.map(imageData => 
                     <div style={photoCardStyle} className="bg-light-grey br1 grow ma1 shadow-5 fr w-40  br3">
