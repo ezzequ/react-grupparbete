@@ -10,9 +10,13 @@ function Sidebar() {
     setComponents([...components, title]);
   }
 
+  function removeBoardFromState(component: string) {
+    setComponents(components.filter((c) => c !== component));
+  }
+
   return (
     <nav className="sidebar w fl-10">
-      <h3 className="title">📌 Mina anslagstavlor</h3>
+      <h3 className="title">📌 My boards</h3>
       <label className="label-title" htmlFor="title">
         Title
       </label>
@@ -24,10 +28,15 @@ function Sidebar() {
         onChange={(e) => setTitle(e.target.value)}
       />
       <button onClick={addComponent} className="button" id={title}>
-        ➕ Ny tavla
+        ➕ New board
       </button>
+
       {components.map((component, i) => (
-        <Board text={component} />
+        <Board
+          key={component}
+          onRemove={() => removeBoardFromState(component)}
+          text={component}
+        />
       ))}
     </nav>
   );

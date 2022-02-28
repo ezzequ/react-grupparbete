@@ -21,6 +21,7 @@
   border-radius: 7%;
   cursor: pointer;
   margin-top: 1rem;
+  background-color: lightgreen;
 }
 input {
   border-radius: 30px;

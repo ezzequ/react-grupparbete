@@ -20,3 +20,9 @@
   overflow: hidden;
   text-align: center;
 }
+
+.remove-btn {
+  cursor: pointer;
+  padding-left: 7rem;
+  margin-top: 0.4rem;
+}
