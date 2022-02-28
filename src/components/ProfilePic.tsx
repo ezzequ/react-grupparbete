@@ -1,6 +1,8 @@
+
+
 function ProfilePic() {
     return(
-        <img className="h3 w3 br-100 ba " src="/assets/test.jpg" alt="" />
+        <img src="" className="h w3 br-100 ba "  alt="" />
     )
 }
 
