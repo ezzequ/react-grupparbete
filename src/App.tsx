@@ -1,20 +1,27 @@
 import React from "react";
 import Main from "./components/Main";
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./components/SIdebar";
 import SearchBar from "./components/SearchBar";
 import Header from "./components/Header";
 import './App.css';
 import HooverDiv from "./components/HooverDiv";
+import UserProfile from "./components/UserProfile";
+import UserContext from "./contexts/UserContext";
+
+
+
 function App() {
   return (
     <>
-    <Header></Header>
-    <SearchBar></SearchBar>
+    <Header />
+    {/* <UserContext.Provider value={}> */}
+      <SearchBar />
       <Main/>
-
-<Sidebar/>
+      <Sidebar />
+    {/* </UserContext.Provider > */}
       
-      <Sidebar/>
+  
+ 
       <HooverDiv/>
     </>
   );
