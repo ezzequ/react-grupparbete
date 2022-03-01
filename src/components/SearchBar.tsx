@@ -1,18 +1,62 @@
 //import { CSSProperties } from "react";
+import React from "react";
 import ProfilePic from "./ProfilePic";
 
-function SearchBar() {
-return(
-    <div className="fr w-80 bg-white br-pill ma2 pa2 center">
-        <input className="h3 w-60 bg-ligtest-gray ba br-pill"   type="text" name="text" id="text" placeholder="Search..." />
-        <div className="flex flex-end w-20 fr center">
-           <div className="w-30 center"> <ProfilePic /></div>
-            <div className="flex items-center w-20 center">...</div>
-        </div>
+interface Props {};
+interface State {
+    value: string;
+    isLoggedIn: boolean;
+};
+
+class SearchBar extends React.Component<Props, State> {
+    constructor(props: Props) {
+        super(props);
+        this.state = { 
+            value: '', 
+            isLoggedIn: false 
+        };
+
+
         
-    </div>
-)
+    }
+
+    render() {
+        return(
+            <div className=" w-90 h3-m bg-white br-pill pa2 flex justify-around mw7 center ">
+                <form className="flex items-center justify-between">
+                    <input className="h2 bg-ligtest-gray ba br-pill fl w-60 pa2" 
+                        type="text"
+                        name="query" 
+                        // value={this.state.value} 
+                        id="text" 
+                        placeholder="Search..." 
+                    />
+                    <button type="submit" className="searchButton h2 ">Search</button>
+                </form>
+            {/* https://www.digitalocean.com/community/tutorials/how-to-build-a-photo-search-app-with-react-using-the-unsplash-api */}
+                <div className="flex justify-around w4 ">
+                    <p>{/* username */}</p>
+
+                    {this.state.isLoggedIn ? <ProfilePic /> : <button onClick={() => this.setState({isLoggedIn: true})}>Log In</button>}
+
+                    <div className=" f3 flex items-center tracked">...</div>
+                </div>
+                
+            </div>
+        )
+    }
+
+    // function toggleLoggedIn() {
+    //     console.log('clicked');
+    //    return(
+    //     this.setState({
+    //         isLoggedIn: true
+    //     })
+    //    )
+    // }
 }
+
+
 
 // const rootStyle: CSSProperties = {
 //     display: "flex",

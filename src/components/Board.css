@@ -5,15 +5,24 @@
   border-radius: 7%;
   cursor: pointer;
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .card {
   background-color: lightgrey;
-  width: 8rem;
-  height: 7rem;
+  width: 9rem;
+  height: auto;
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 7%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.remove-btn {
+  cursor: pointer;
+  padding-left: 7rem;
+  margin-top: 0.4rem;
 }

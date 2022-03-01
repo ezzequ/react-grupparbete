@@ -1,7 +1,9 @@
 import { Component, CSSProperties } from "react"
 import HooverDiv from "./HooverDiv"
+import imageitems from "../global/imageitems";
+import "./photoCard.css"
 
-//import InfiniteScroll from "react-infinite-scroll-component";
+
 
 interface Props {}
 interface State {
@@ -42,7 +44,8 @@ class PhotoCard extends Component<Props, State> {
     
    
     async componentDidMount() {
-        const url = 'https://api.unsplash.com/search/photos?page=10&per_page=30&query=landscape';
+
+        const url = 'https://api.unsplash.com/search/photos?page=1&per_page=50&query=scotland';
         const response = await fetch(url, {
             headers: {
                 "authorization": "Client-ID atOI9pA6vM7-48sURp4sfveE-vt7pSu99waKjQ5GWUc"
@@ -50,7 +53,11 @@ class PhotoCard extends Component<Props, State> {
         });
         const data: ImageData[] = (await response.json()).results; 
         this.setState({ imagesData: data});
-        
+
+
+        console.log(data[0])
+    
+
     }
 
 
@@ -58,27 +65,13 @@ class PhotoCard extends Component<Props, State> {
 
         return(
         
-            <div className = "photos-container" >
-                
+            <div style={photoContainerStyle}>
                 {this.state.imagesData.map(imageData => 
-                
-                
-                <div style={photoCardStyle} className="bg-light-grey br1 ma1 shadow-5 fr w-40  br3"
-                >
-                    
-                    <img key={imageData.id} src={imageData.urls.regular} alt={imageData.alt_description} className="br3 w-100"/>
-                     <HooverDiv imageData={{
-                         alt_description: imageData.alt_description}}>
-
-                   </HooverDiv> 
-                     </div>  
-                    
-
-        
-                      
-                                    
-             
-                    )}
+                    <div key={imageData.id} style={{height: "100%"}} className="photo-card bg-light-grey br1 grow ma2 shadow-5 fr br3">
+                        <img src={imageData.urls.regular} alt={imageData.alt_description} className="br3"  />
+                    </div>
+                )}
+            
             </div>
         )
         
@@ -87,11 +80,22 @@ class PhotoCard extends Component<Props, State> {
    
 }
 
-const photoCardStyle: CSSProperties = {
-    display: "flex",
-    flexWrap: "wrap"
+const photoContainerStyle: CSSProperties = {
+    width: "100%",
+    height: "100vh",
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, 20rem [col-start])",
+
+    justifyContent: "center"
 }
 
 
 
+
 export default PhotoCard;
+
+
+// Om en rad = 10px så kommer ett card = x antal rader. 
+// kortets height / 10 = antal rader cardet ska spana
+
+
