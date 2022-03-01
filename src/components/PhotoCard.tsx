@@ -1,8 +1,6 @@
 import { Component, CSSProperties } from "react"
+import ButtonAdd from "./ButtonAdd";
 import HooverDiv from "./HooverDiv"
-import imageitems from "../global/imageitems";
-
-import HooverDiv from "./HooverDiv";
 import "./HooverDiv.css"
 
 import "./photoCard.css"
@@ -74,7 +72,9 @@ class PhotoCard extends Component<Props, State> {
                 {this.state.imagesData.map(imageData => 
                     <div key={imageData.id} className="photo-card bg-light-grey br1 grow ma2 shadow-5 fr br3">
                         <div className="hoover-div">
-                            <HooverDiv />
+                            <HooverDiv imageData={{
+                                alt_description: ""
+                            }} children={ButtonAdd} />
                         </div>
                         <img id={imageData.id} src={imageData.urls.regular} alt={imageData.alt_description} className="br3"  />
                     </div>
