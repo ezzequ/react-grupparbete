@@ -15,7 +15,7 @@ export default function HooverDiv(props: Props) {
  
   
     return (
-      <div className="HooverDiv absolute relative">
+      <div className="HooverDiv hoover-div absolute relative">
         <div
           className="cover bg-black-50 hover-blue br3 center tc white shadow-5"
           onClick={() => console.log("apa")}

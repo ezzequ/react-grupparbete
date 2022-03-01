@@ -21,9 +21,9 @@ function App() {
 
       {/* </UserContext.Provider > */}
 
-      <HooverDiv imageData={{
+      {/* <HooverDiv imageData={{
         alt_description: ""
-      }} children={ButtonAdd} />
+      }} children={ButtonAdd} /> */}
 
     </>
   );

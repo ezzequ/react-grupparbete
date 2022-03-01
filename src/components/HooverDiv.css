@@ -1,8 +1,10 @@
 .hoover-div {
    height: 100%;
    width: 100%;
-  
+   padding: 1rem;
    position: absolute;
+   border: 2px solid red;
+   /* visibility:hidden ; */
 }
 
 .hoover-div:hover {
