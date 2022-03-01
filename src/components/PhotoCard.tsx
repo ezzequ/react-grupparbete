@@ -1,5 +1,7 @@
 import { Component, CSSProperties } from "react"
 import imageitems from "../global/imageitems";
+import HooverDiv from "./HooverDiv";
+import "./HooverDiv.css"
 
 import "./photoCard.css"
 
@@ -14,6 +16,7 @@ interface ImageData {
     alt_description: "white modern cement building under blue sky";
     id: "RFDP7_80v5A";
     liked_by_user: false;
+    imgHeight: number;
     urls: {
         full: string;
         raw: string;
@@ -40,35 +43,41 @@ class PhotoCard extends Component<Props, State> {
         this.setState({ imagesData: data});
         console.log(data[0])
     
+    
     }
 
 
     render() {
     
         return(
-        
+            
             <div style={photoContainerStyle}>
                 {this.state.imagesData.map(imageData => 
-                    <div key={imageData.id} style={{height: "100%"}} className="photo-card bg-light-grey br1 grow ma2 shadow-5 fr br3">
-                        <img src={imageData.urls.regular} alt={imageData.alt_description} className="br3"  />
+                    <div key={imageData.id} className="photo-card bg-light-grey br1 grow ma2 shadow-5 fr br3">
+                        <div className="hoover-div">
+                            <HooverDiv />
+                        </div>
+                        <img id={imageData.id} src={imageData.urls.regular} alt={imageData.alt_description} className="br3"  />
                     </div>
                 )}
-            
             </div>
         )
     }
 
 
 }
-
+ console.log()
 const photoContainerStyle: CSSProperties = {
     width: "100%",
     height: "100vh",
     display: "grid",
     gridTemplateColumns: "repeat(auto-fill, 20rem [col-start])",
-
+    gridAutoRows: "",
     justifyContent: "center"
 }
+
+
+
 
 
 
