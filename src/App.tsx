@@ -7,6 +7,7 @@ import "./App.css";
 import HooverDiv from "./components/HooverDiv";
 import UserProfile from "./components/UserProfile";
 import UserContext from "./contexts/UserContext";
+import ButtonAdd from "./components/ButtonAdd";
 
 
 function App() {
@@ -20,7 +21,9 @@ function App() {
 
       {/* </UserContext.Provider > */}
 
-      <HooverDiv />
+      <HooverDiv imageData={{
+        alt_description: ""
+      }} children={ButtonAdd} />
 
     </>
   );
