@@ -3,11 +3,11 @@ import ProfilePic from "./ProfilePic";
 
 function SearchBar() {
 return(
-    <div className="fr w-90 bg-white br-pill ma2 pa2">
-        <input className="h3 bg-ligtest-gray ba br-pill fl w-60 pa2"  type="text" name="text" id="text" placeholder="Search..." />
-        <div className="flex justify-around w4 ">
-            <ProfilePic />
-            <div className=" f3 flex items-center">...</div>
+    <div className="fr w-80 bg-white br-pill ma2 pa2 center">
+        <input className="h3 w-60 bg-ligtest-gray ba br-pill"   type="text" name="text" id="text" placeholder="Search..." />
+        <div className="flex flex-end w-20 fr center">
+           <div className="w-30 center"> <ProfilePic /></div>
+            <div className="flex items-center w-20 center">...</div>
         </div>
         
     </div>
