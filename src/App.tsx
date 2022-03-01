@@ -2,13 +2,8 @@ import React from "react";
 import Main from "./components/Main";
 import Sidebar from "./components/SIdebar";
 import SearchBar from "./components/SearchBar";
-import Header from "./components/Header";
+import Header from "./components/Header"
 import './App.css';
-import HooverDiv from "./components/HooverDiv";
-import UserProfile from "./components/UserProfile";
-import UserContext from "./contexts/UserContext";
-
-
 
 function App() {
   return (
@@ -20,9 +15,7 @@ function App() {
       <Sidebar />
     {/* </UserContext.Provider > */}
       
-  
  
-      <HooverDiv/>
     </>
   );
 }

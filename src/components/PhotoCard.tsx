@@ -1,12 +1,15 @@
 import { Component, CSSProperties } from "react"
+import HooverDiv from "./HooverDiv"
 import imageitems from "../global/imageitems";
-
 import "./photoCard.css"
+
 
 
 interface Props {}
 interface State {
     imagesData: any[];
+   
+  
 }
 
 
@@ -18,18 +21,30 @@ interface ImageData {
         full: string;
         raw: string;
         regular: string;
+        
     }  
+    
 }
 
 
 class PhotoCard extends Component<Props, State> {
+   
     constructor(props: Props) {
         super(props);
         this.state = { imagesData: [] };
+         
+           
+        
+      
+        
     }
 
-
+    
+    
+    
+   
     async componentDidMount() {
+
         const url = 'https://api.unsplash.com/search/photos?page=1&per_page=50&query=scotland';
         const response = await fetch(url, {
             headers: {
@@ -38,13 +53,16 @@ class PhotoCard extends Component<Props, State> {
         });
         const data: ImageData[] = (await response.json()).results; 
         this.setState({ imagesData: data});
+
+
         console.log(data[0])
     
+
     }
 
 
     render() {
-    
+
         return(
         
             <div style={photoContainerStyle}>
@@ -56,9 +74,10 @@ class PhotoCard extends Component<Props, State> {
             
             </div>
         )
+        
     }
-
-
+    
+   
 }
 
 const photoContainerStyle: CSSProperties = {
@@ -72,7 +91,9 @@ const photoContainerStyle: CSSProperties = {
 
 
 
-export default PhotoCard
+
+export default PhotoCard;
+
 
 // Om en rad = 10px så kommer ett card = x antal rader. 
 // kortets height / 10 = antal rader cardet ska spana
