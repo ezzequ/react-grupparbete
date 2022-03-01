@@ -71,11 +71,11 @@ class PhotoCard extends Component<Props, State> {
             <div style={photoContainerStyle}>
                 {this.state.imagesData.map(imageData => 
                     <div key={imageData.id} className="photo-card bg-light-grey br1 grow ma2 shadow-5 fr br3">
-                        <div className="hoover-div">
+                        
                             <HooverDiv imageData={{
                                 alt_description: ""
                             }} children={ButtonAdd} />
-                        </div>
+                    
                         <img id={imageData.id} src={imageData.urls.regular} alt={imageData.alt_description} className="br3"  />
                     </div>
                 )}
