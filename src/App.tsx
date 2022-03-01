@@ -8,6 +8,7 @@ import HooverDiv from "./components/HooverDiv";
 import UserProfile from "./components/UserProfile";
 import UserContext from "./contexts/UserContext";
 
+
 function App() {
   return (
     <>
@@ -16,9 +17,11 @@ function App() {
       <SearchBar />
       <Main />
       <Sidebar />
+
       {/* </UserContext.Provider > */}
 
       <HooverDiv />
+
     </>
   );
 }

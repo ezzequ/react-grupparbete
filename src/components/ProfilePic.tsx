@@ -1,9 +1,11 @@
 
 
+import monkey from '../images/money.png'
 function ProfilePic() {
     return(
-        <img src="" className="h w3 br-100 ba "  alt="" />
-    )
-}
+        <div className="h3 w3 br-100 center">
+            <img className="h3 w3 br-100 center ba" src={monkey} alt="monkey" />
+        </div>
+
 
 export default ProfilePic;
