@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Board from "./Board";
 import "./Sidebar.css";
+import { FaBars } from "react-icons/fa";
 
 function Sidebar() {
   const [components, setComponents] = useState<string[]>([]);
@@ -16,6 +17,7 @@ function Sidebar() {
 
   return (
     <nav className="sidebar w fl-10">
+      <FaBars />
       <h3 className="title">📌 My boards</h3>
       <label className="label-title" htmlFor="title">
         Title
