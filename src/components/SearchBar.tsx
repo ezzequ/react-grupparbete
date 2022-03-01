@@ -16,6 +16,7 @@ class SearchBar extends React.Component<Props, State> {
             isLoggedIn: false 
         };
 
+
         
     }
 
