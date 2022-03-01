@@ -1,6 +1,6 @@
 
-import monkey from '../images/money.png'
 
+import monkey from '../images/money.png'
 function ProfilePic() {
     return(
         <div className="h3 w3 br-100 center">
