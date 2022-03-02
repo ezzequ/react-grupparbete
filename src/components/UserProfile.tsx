@@ -11,7 +11,7 @@ const UserProfile = () => {
  }
 }
 
-const UserContext = createContext(null);
+//const UserContext = createContext(null);
 
 
 export default UserProfile;
