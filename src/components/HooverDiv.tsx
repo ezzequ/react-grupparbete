@@ -21,13 +21,14 @@ export default function HooverDiv(props: Props) {
           onClick={() => console.log("apa")}
         >
           <p>{props.imageData.alt_description}</p>
+          <hr className="bb bg-white white br2"></hr>
           <ButtonAdd
             imageData={{
               alt_description: "",
             }}
             children={props.children}
           />
-          <hr className="bb bg-white white br2"></hr>
+          
         </div>
       </div>
     );

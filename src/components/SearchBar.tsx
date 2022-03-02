@@ -33,7 +33,7 @@ class SearchBar extends React.Component<Props, State> {
         console.log(this.state.query)
         return(
             <div className=" w-90 h3-m bg-white br-pill pa2 flex justify-around mw7 center ">
-                <form className="flex items-center justify-between" onSubmit={e => e.preventDefault()} >
+                <form className="flex items-center justify-between" >
 
                     <input className="h2 bg-ligtest-gray ba br-pill fl w-60 pa2" 
                         type="text"
@@ -60,11 +60,7 @@ class SearchBar extends React.Component<Props, State> {
         )
 
         
-    }
-
-
-
- 
+    } 
 }
 
 

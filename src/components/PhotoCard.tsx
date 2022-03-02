@@ -45,7 +45,7 @@ class PhotoCard extends Component<Props, State> {
    
     async componentDidMount() {
 
-        const url = "https://api.unsplash.com/search/photos?page=1&per_page=50&query=scotland" + {};
+        const url = "https://api.unsplash.com/search/photos?page=1&per_page=50&query=landscape";
         const response = await fetch(url, {
             headers: {
                 "authorization": "Client-ID atOI9pA6vM7-48sURp4sfveE-vt7pSu99waKjQ5GWUc"
