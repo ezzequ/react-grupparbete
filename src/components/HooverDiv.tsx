@@ -1,7 +1,7 @@
 
 import './Buttonstyle.css'
 import ButtonAdd from "./ButtonAdd";
-import PhotoCard from "./PhotoCard";
+// import PhotoCard from "./PhotoCard";
 
 
 interface Props {
@@ -21,13 +21,14 @@ export default function HooverDiv(props: Props) {
           onClick={() => console.log("apa")}
         >
           <p>{props.imageData.alt_description}</p>
+          <hr className="bb bg-white white br2"></hr>
           <ButtonAdd
             imageData={{
               alt_description: "",
             }}
-            children={new PhotoCard(props)}
+            children={props.children}
           />
-          <hr className="bb bg-white white br2"></hr>
+          
         </div>
       </div>
     );
