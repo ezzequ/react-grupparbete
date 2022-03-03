@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "../App";
 // import { Component, CSSProperties } from "react";
-import PhotoCard from "./PhotoCard";
+import PhotoCardCollection from "./PhotoCardCollection";
 import "./photoCard.css";
 import SearchBar from "./SearchBar";
 
@@ -27,35 +27,24 @@ class Main extends React.Component<Props, State> {
       // this.handleChange = this.handleChange.bind(this)
     }
 
-   componentDidMount(){
-      this.forceUpdate()
-
-
-   }
-   
- 
-     render() {
-        console.log(this.state.searchQuery);
-      return(
-        <main className="fr w-100 h-100 pa2">
   
-                <SearchBar handleChange={ () => this.handleOnChange(this.state.searchQuery) } />
-                <PhotoCard query = {this.state.searchQuery}/>
+    handleQueryChange = (query: string) => {
+        console.log(query)
+        this.setState((query) => {
+          return {searchQuery: query}
+        })
+        
+      }
+
+     render() {
+      return(
+        <main className="fr w-100 h-100 pa2"  >
+                <SearchBar onQueryChange={this.handleQueryChange}  />
+                <PhotoCardCollection query = {this.state.searchQuery}/>
         </main>
         );  
     } 
-    
-    handleOnChange(query: string) {
-        console.log('asdfghjklkjhgfghj')
-        console.log(query)
-        this.setState({ searchQuery : query });
-        console.log(this.state.searchQuery)
-        
-    }
 }
-
-
-
 export default Main;
 
 

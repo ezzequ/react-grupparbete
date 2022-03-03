@@ -8,18 +8,17 @@ import "./photoCard.css"
 
 
 interface Props {
-    query: String
+    query: string
 }
 interface State {
     imagesData: any[];
-   
 }
 
 
 interface ImageData {
     alt_description: string;
     id: string;
-    liked_by_user: false;
+    liked_by_user: boolean;
     imgHeight: number;
     urls: {
         full: string;
@@ -30,7 +29,7 @@ interface ImageData {
 }
 
 
-class PhotoCard extends Component<Props, State> {
+class PhotoCardCollection extends Component<Props, State> {
    
     constructor(props: Props) {
         super(props);
@@ -40,12 +39,8 @@ class PhotoCard extends Component<Props, State> {
     }
 
     
-    
-    
-   
-    async componentDidMount() {
-
-        const url = "https://api.unsplash.com/search/photos?page=1&per_page=50&query=landscape";
+   async fetchImages() {
+        const url = "https://api.unsplash.com/search/photos?page=1&per_page=50&query=" + this.props.query;
         const response = await fetch(url, {
             headers: {
                 "authorization": "Client-ID atOI9pA6vM7-48sURp4sfveE-vt7pSu99waKjQ5GWUc"
@@ -56,7 +51,18 @@ class PhotoCard extends Component<Props, State> {
         console.log(this.props.query)
 
     }
+    
+   
+     componentDidMount() {
+        this.fetchImages();
+        
+    }
 
+    componentDidUpdate(prevProps: Props) {
+        if (prevProps.query !== this.props.query) {
+            this.fetchImages();
+        }   
+    }
 
     render() {
 
@@ -93,7 +99,7 @@ const photoContainerStyle: CSSProperties = {
 
 
 
-export default PhotoCard
+export default PhotoCardCollection
 
 
 // Om en rad = 10px så kommer ett card = x antal rader. 

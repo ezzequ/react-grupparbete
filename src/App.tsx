@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import Main from "./components/Main";
 import Sidebar from "./components/Sidebar";
 // import SearchBar from "./components/SearchBar";
@@ -10,18 +10,34 @@ import SearchBar from "./components/SearchBar";
 
 // import ButtonAdd from "./components/ButtonAdd";
 
+interface Props {
 
-function App() {
-  return (
+};
+
+interface State {
+  searchQuery: any,
+};
+
+class App extends Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      searchQuery: "land"
+    }
+  }
+
+  render() {
+     return (
     <>
+     
       <Main />
       <Sidebar />
-      {/* <HooverDiv imageData={{
-        alt_description: ""
-      }} children={ButtonAdd} /> */}
 
     </>
   );
 }
+
+}
+ 
 
 export default App;
