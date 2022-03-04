@@ -1,35 +1,39 @@
 .sidebar {
-  position: fixed;
-  width: 250px;
-  height: 100%;
-  left: 0;
-  background-color: #8a8a8ab0;
+  z-index: 10;
+   position: fixed;
+   bottom:0;
+  /* width: 250px; */
+  margin-top:50px;
+  height: 25%;
+  /* left: 0; */
+  background-color: #0e0d0db0;
   display: flex;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
+  overflow: visible;
 }
 
 .title {
-  color: black;
-  font-size: 1.4rem;
+  color: white;
+  /* font-size: 1.4rem; */
 }
 
 .button {
   border: none;
-  color: black;
+  color: white;
   padding: 0.5rem;
-  border-radius: 7%;
+  border-radius: 10px;
   cursor: pointer;
-  margin-top: 1rem;
-  background-color: lightgreen;
+  /* margin-top: 1rem; */
+  background-color: rgba(39, 41, 39, 0.685);
 }
 input {
   border-radius: 30px;
   border: none;
-  padding: 10px;
-  margin: 10px;
+  padding: 5px;
+  margin: 5px;
 }
 
 .label-title {
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.1rem;
 }

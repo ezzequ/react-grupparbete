@@ -1,7 +1,10 @@
+
 import { CSSProperties, useState } from 'react';
 import { isWhiteSpaceLike } from 'typescript';
+import { useState } from 'react';
 import './Buttonstyle.css'
 import Sidebar from './Sidebar';
+
 
 interface Props {
   imageData: {
@@ -32,6 +35,7 @@ export default function HooverDiv(props: Props) {
                 <Sidebar></Sidebar> }
               </div>
             </div> }
+
       </div>
     );
   }
