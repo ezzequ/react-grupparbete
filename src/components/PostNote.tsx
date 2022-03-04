@@ -1,29 +1,29 @@
 import { useState, useEffect } from "react";
 import Board from "./Board";
-import "./Sidebar.css";
+import "./PostNote.css";
 import ProfilePic from "./ProfilePic";
 
-function Sidebar() {
-  const [components, setComponents] = useState<string[]>([]);
+function PostNote() {
+  const [notes, setNotes] = useState<string[]>([]);
   const [title, setTitle] = useState("");
 
   useEffect(() => {
     const inputData = localStorage.getItem("test");
     if (inputData) {
-      setComponents(JSON.parse(inputData));
+      setNotes(JSON.parse(inputData));
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("test", JSON.stringify(components));
+    localStorage.setItem("test", JSON.stringify(notes));
   });
 
-  function addComponent() {
-    setComponents([...components, title]);
+  function addNote() {
+    setNotes([...notes, title]);
   }
 
-  function removeBoardFromState(component: string) {
-    setComponents(components.filter((c) => c !== component));
+  function removeNoteFromState(note: string) {
+    setNotes(notes.filter((c) => c !== note));
   }
 
   return (
@@ -40,19 +40,19 @@ function Sidebar() {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
-      <button className=" button br-pill bn " onClick={addComponent} id={title}>
+      <button className=" button br-pill bn " onClick={addNote} id={title}>
         {/* ➕ New board */} Post comment
       </button>
 
-      {components.map((component, i) => (
+      {notes.map((note, i) => (
         <Board
-          key={component}
-          onRemove={() => removeBoardFromState(component)}
-          text={component}
+          key={note}
+          onRemove={() => removeNoteFromState(note)}
+          text={note}
         />
       ))}
     </nav>
   );
 }
 
-export default Sidebar;
+export default PostNote;

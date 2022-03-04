@@ -1,9 +1,7 @@
-
 import { CSSProperties, useState } from "react";
 import { isWhiteSpaceLike } from "typescript";
 import "./Buttonstyle.css";
-import Sidebar from "./Sidebar";
-
+import PostNote from "./PostNote";
 
 interface Props {
   imageData: {
@@ -34,7 +32,7 @@ export default function HooverDiv(props: Props) {
             >
               {show ? " Hide comments " : " Show comment section "}
             </button>
-            {show && <Sidebar></Sidebar>}
+            {show && <PostNote></PostNote>}
           </div>
         </div>
       )}
