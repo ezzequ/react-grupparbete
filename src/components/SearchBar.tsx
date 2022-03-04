@@ -12,28 +12,21 @@ interface State {
 };
 
 class SearchBar extends React.Component<Props, State> {
-
-    
     constructor(props: Props) {
         super(props);
         this.state = { 
             query: '',
             isLoggedIn: false,
-  
         };
-    
-        
     }
 
     handleSubmit(e: FormEvent) {
          e.preventDefault();
         this.props.onQueryChange(this.state.query);
-       
     }
 
 
   render() {
-        console.log(this.state.query)
         return (
           <div className=" w-90 h3-m bg-white-50 br-pill pa2 ma2 flex justify-around mw7 center white">
             <form
@@ -57,10 +50,8 @@ class SearchBar extends React.Component<Props, State> {
                 Search
               </button>
             </form>
-            {/* https://www.digitalocean.com/community/tutorials/how-to-build-a-photo-search-app-with-react-using-the-unsplash-api */}
+           
             <div className="flex justify-around w4 ">
-              <p>{/* username */}</p>
-
               {this.state.isLoggedIn ? (
                 <ProfilePic />
               ) : (
@@ -76,8 +67,6 @@ class SearchBar extends React.Component<Props, State> {
             </div>
           </div>
         );
-
-        
     } 
 }
 

@@ -5,7 +5,7 @@ import ProfilePic from "./ProfilePic";
 
 function Sidebar() {
   const [components, setComponents] = useState<string[]>([]);
-  const [title, setTitle] = useState("");
+  const [note, setNote] = useState("");
 
   useEffect(() => {
     const inputData = localStorage.getItem("test");
@@ -19,7 +19,7 @@ function Sidebar() {
   });
 
   function addComponent() {
-    setComponents([...components, title]);
+    setComponents([...components, note]);
   }
 
   function removeBoardFromState(component: string) {
@@ -29,18 +29,15 @@ function Sidebar() {
   return (
     <nav className="sidebar w fl-10">
       <ProfilePic />
-      {/* <h3 className="title">📌 My boards</h3> */}
-      {/* <label className="label-title" htmlFor="title">
-        Title
-      </label> */}
+     
       <input
         id="title"
         type="text"
         name="title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
+        value={note}
+        onChange={(e) => setNote(e.target.value)}
       />
-      <button className=" button br-pill bn " onClick={addComponent} id={title}>
+      <button className=" button br-pill bn " onClick={addComponent} id={note}>
         {/* ➕ New board */} Post comment
       </button>
 

@@ -1,6 +1,6 @@
 
-import { CSSProperties, useState } from "react";
-import { isWhiteSpaceLike } from "typescript";
+import {  useState } from "react";
+
 import "./Buttonstyle.css";
 import Sidebar from "./Sidebar";
 
@@ -22,7 +22,7 @@ export default function HooverDiv(props: Props) {
       onMouseLeave={() => setIsHoverd(false)}
       style={{ width: "100%", height: "100%", position: "absolute" }}
     >
-      {isHoverd !== false && (
+      {isHoverd && (
         <div className="HooverDiv hoover-div absolute w-100 bg-black-20 center tc white shadow-5">
           <div className=" br3" onClick={() => console.log("apa")}>
             <p>{props.imageData.alt_description}</p>

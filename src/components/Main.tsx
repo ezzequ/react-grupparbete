@@ -1,12 +1,10 @@
 import React from "react";
 import PhotoCardCollection from "./PhotoCardCollection";
-import "./photoCard.css";
 import SearchBar from "./SearchBar";
 
 
-interface Props {
-    
-};
+interface Props { };
+
 interface State {
     searchQuery: string,
     imagesData: [],
@@ -21,14 +19,11 @@ class Main extends React.Component<Props, State> {
             imagesData: [],
             searchQuery: "landscape"
         };
-      // this.handleChange = this.handleChange.bind(this)
     }
 
   
     handleQueryChange = (query: string) => {
-        console.log(query)
         this.setState({searchQuery: query})
-        
       }
 
      render() {
