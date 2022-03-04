@@ -57,9 +57,9 @@ class SearchBar extends React.Component<Props, State> {
                 Search
               </button>
             </form>
-            {/* https://www.digitalocean.com/community/tutorials/how-to-build-a-photo-search-app-with-react-using-the-unsplash-api */}
+            
             <div className="flex justify-around w4 ">
-              <p>{/* username */}</p>
+              
 
               {this.state.isLoggedIn ? (
                 <ProfilePic />

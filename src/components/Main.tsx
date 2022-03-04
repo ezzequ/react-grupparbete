@@ -21,7 +21,7 @@ class Main extends React.Component<Props, State> {
             imagesData: [],
             searchQuery: "landscape"
         };
-      // this.handleChange = this.handleChange.bind(this)
+      
     }
 
   
