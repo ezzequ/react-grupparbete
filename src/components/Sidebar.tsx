@@ -2,6 +2,7 @@ import { useState } from "react";
 import Board from "./Board";
 import "./Sidebar.css";
 import { FaBars } from "react-icons/fa";
+import ProfilePic from "./ProfilePic";
 
 function Sidebar() {
   const [components, setComponents] = useState<string[]>([]);
@@ -17,11 +18,13 @@ function Sidebar() {
 
   return (
     <nav className="sidebar w fl-10">
-      <FaBars />
-      <h3 className="title">📌 My boards</h3>
-      <label className="label-title" htmlFor="title">
+      {/* <FaBars /> */}
+      <ProfilePic />
+      <h3 className="title"></h3>
+      {/* <h3 className="title">📌 My boards</h3> */}
+      {/* <label className="label-title" htmlFor="title">
         Title
-      </label>
+      </label> */}
       <input
         id="title"
         type="text"
@@ -29,8 +32,8 @@ function Sidebar() {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
-      <button onClick={addComponent} className="button" id={title}>
-        ➕ New board
+      <button className=" button br-pill bg-black-20 bn black" onClick={addComponent}  id={title}>
+        {/* ➕ New board */} post Comment
       </button>
 
       {components.map((component, i) => (
