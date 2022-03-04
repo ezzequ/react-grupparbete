@@ -15,6 +15,6 @@ Images are imported by an API from unsplash
 
 
 
-to make the app run you first ned to write the command: "npm install" in your terminal. then write "npm run" to start the app 
+to make the app run you first ned to write the command: "npm install" in your terminal. then write "npm start" to start the app 
 
 demo: https://ezzequ.github.io/react-grupparbete/
