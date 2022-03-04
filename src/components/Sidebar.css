@@ -1,9 +1,9 @@
 .sidebar {
   z-index: 10;
-   position: fixed;
-   bottom:0;
+  position: fixed;
+  bottom: 0;
   /* width: 250px; */
-  margin-top:50px;
+  margin-top: 50px;
   height: 25%;
   /* left: 0; */
   background-color: #0e0d0db0;
@@ -21,11 +21,12 @@
 .button {
   border: none;
   color: white;
-  padding: 0.5rem;
-  border-radius: 10px;
+  padding: 0.3rem;
+  /* border-radius: 10px; */
   cursor: pointer;
   /* margin-top: 1rem; */
-  background-color: rgba(39, 41, 39, 0.685);
+  background-color: rgba(91, 228, 91, 0.685);
+  font-size: 1rem;
 }
 input {
   border-radius: 30px;
