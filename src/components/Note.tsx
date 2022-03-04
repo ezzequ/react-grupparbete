@@ -1,11 +1,11 @@
-import "./Board.css";
+import "./Note.css";
 
 interface Props {
   text: string;
   onRemove: () => void;
 }
 
-function Board(props: Props) {
+function Note(props: Props) {
   return (
     <div className="card">
       <p className="remove-btn" onClick={props.onRemove}>
@@ -16,4 +16,4 @@ function Board(props: Props) {
   );
 }
 
-export default Board;
+export default Note;

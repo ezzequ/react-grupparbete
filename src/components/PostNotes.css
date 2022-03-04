@@ -1,8 +1,8 @@
-.sidebar {
+.post-notes {
   z-index: 10;
   position: fixed;
   bottom: 0;
- 
+
   margin-top: 50px;
   height: 25%;
 
@@ -15,16 +15,15 @@
 
 .title {
   color: white;
-
 }
 
 .button {
   border: none;
   color: white;
   padding: 0.3rem;
-  
+
   cursor: pointer;
- 
+
   background-color: rgba(91, 228, 91, 0.685);
   font-size: 1rem;
 }
