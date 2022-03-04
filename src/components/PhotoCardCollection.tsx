@@ -1,5 +1,4 @@
 import { Component, CSSProperties } from "react"
-import ButtonAdd from "./ButtonAdd";
 import HooverDiv from "./HooverDiv"
 import "./HooverDiv.css"
 
@@ -77,7 +76,7 @@ class PhotoCardCollection extends Component<Props, State> {
                         
                             <HooverDiv imageData={{
                                 alt_description: imageData.alt_description,
-                            }} children={ButtonAdd}></HooverDiv>
+                            }}></HooverDiv>
                     
                         <img  id={imageData.id} src={imageData.urls.regular} alt={imageData.alt_description} className="br3" width="100%" height={imageData.Height} />
                     </div>
@@ -99,20 +98,19 @@ const photoContainerStyle: CSSProperties = {
     height: "100vh",
     display: "grid",
     gridTemplateColumns: "repeat(auto-fill, 20rem [col-start])",
-    //gridAutoRows: "10px",
+    
     justifyContent: "center"
 }
 
 const imgStyle: CSSProperties = {
     gridRowStart: "",
-    //gridRowEnd: `span 30`
+    
 
 
 }
 export default PhotoCardCollection;
 
 
-// Om en rad = 10px så kommer ett card = x antal rader. 
-// kortets height / 10 = antal rader cardet ska spana
+
 
 

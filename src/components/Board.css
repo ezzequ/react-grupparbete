@@ -13,14 +13,9 @@
   position: absolute;
   z-index: 10;
   background-color: black;
-  /* width: 9rem; */
   width: 100%;
   height: auto;
   margin-top: 0.5rem;
-  /* display: flex;
-  flex-direction: row;
-  align-items: center; */
-
   overflow: scroll;
   text-align: center;
 }
