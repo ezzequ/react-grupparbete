@@ -1,13 +1,10 @@
-
 import { useState } from "react";
-import Sidebar from "./Sidebar";
-
+import PostNotes from "./PostNotes";
 
 interface Props {
   imageData: {
     alt_description: string;
   };
-  
 }
 
 export default function HooverDiv(props: Props) {
@@ -32,7 +29,7 @@ export default function HooverDiv(props: Props) {
             >
               {show ? " Hide comments " : " Show comment section "}
             </button>
-            {show && <Sidebar></Sidebar>}
+            {show && <PostNotes></PostNotes>}
           </div>
         </div>
       )}
