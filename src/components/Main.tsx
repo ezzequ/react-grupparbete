@@ -22,7 +22,7 @@ class Main extends React.Component<Props, State> {
         super(props);
         this.state = { 
             imagesData: [],
-            searchQuery: ""
+            searchQuery: "landscape"
         };
       // this.handleChange = this.handleChange.bind(this)
     }

@@ -54,6 +54,7 @@ class PhotoCardCollection extends Component<Props, State> {
    
      componentDidMount() {
         this.fetchImages();
+       
         
     }
 
@@ -64,41 +65,51 @@ class PhotoCardCollection extends Component<Props, State> {
     }
 
     render() {
+        for (let img of this.state.imagesData) {
+            console.log(img.height, img.width);
+        }
 
         return(
             
             <div style={photoContainerStyle}>
                 {this.state.imagesData.map((imageData) => 
-                    <div key={imageData.id} className="photo-card bg-light-grey br1 grow ma2 shadow-5 fr br3">
+                    <div style={imgStyle} key={imageData.id} className="photo-card bg-light-grey br1 grow ma2 shadow-5 fr br3">
                         
                             <HooverDiv imageData={{
                                 alt_description: imageData.alt_description,
                             }} children={ButtonAdd}></HooverDiv>
                     
-                        <img id={imageData.id} src={imageData.urls.regular} alt={imageData.alt_description} className="br3"  />
+                        <img  id={imageData.id} src={imageData.urls.regular} alt={imageData.alt_description} className="br3" width="100%" height={imageData.Height} />
                     </div>
                 )}
             </div>
         )
         
     }
+
+    
     
    
 }
- console.log()
+
+
+
 const photoContainerStyle: CSSProperties = {
     width: "100%",
     height: "100vh",
     display: "grid",
     gridTemplateColumns: "repeat(auto-fill, 20rem [col-start])",
-    gridAutoRows: "",
+    //gridAutoRows: "10px",
     justifyContent: "center"
 }
 
+const imgStyle: CSSProperties = {
+    gridRowStart: "",
+    //gridRowEnd: `span 30`
 
 
-
-export default PhotoCardCollection
+}
+export default PhotoCardCollection;
 
 
 // Om en rad = 10px så kommer ett card = x antal rader. 
