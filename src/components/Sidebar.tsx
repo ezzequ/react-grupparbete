@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Board from "./Board";
 import "./Sidebar.css";
-import { FaBars } from "react-icons/fa";
 import ProfilePic from "./ProfilePic";
 
 function Sidebar() {
@@ -20,7 +19,6 @@ function Sidebar() {
     <nav className="sidebar w fl-10">
       {/* <FaBars /> */}
       <ProfilePic />
-      <h3 className="title"></h3>
       {/* <h3 className="title">📌 My boards</h3> */}
       {/* <label className="label-title" htmlFor="title">
         Title
