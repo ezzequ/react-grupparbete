@@ -49,7 +49,6 @@ class PhotoCardCollection extends Component<Props, State> {
         const data: ImageData[] = (await response.json()).results; 
         this.setState({ imagesData: data});
         console.log(this.props.query)
-
     }
     
    

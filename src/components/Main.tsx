@@ -30,9 +30,7 @@ class Main extends React.Component<Props, State> {
   
     handleQueryChange = (query: string) => {
         console.log(query)
-        this.setState((query) => {
-          return {searchQuery: query}
-        })
+        this.setState({searchQuery: query})
         
       }
 

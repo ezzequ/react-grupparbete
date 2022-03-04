@@ -1,7 +1,6 @@
-import React, { Component, FormEvent } from "react";
-import ReactDOM from "react-dom";
-//import { Component } from "react";
+import React, { FormEvent } from "react";
 import ProfilePic from "./ProfilePic";
+// import UserProfile from "./UserProfile";
 
 interface Props {
   onQueryChange: (query: string) => any
@@ -13,9 +12,7 @@ interface State {
 };
 
 class SearchBar extends React.Component<Props, State> {
-    // handleChange(e){
-    //     this.props.onChange()
-    // }
+
     
     constructor(props: Props) {
         super(props);
@@ -27,6 +24,7 @@ class SearchBar extends React.Component<Props, State> {
     
         
     }
+
     handleSubmit(e: FormEvent) {
          e.preventDefault();
         this.props.onQueryChange(this.state.query);
@@ -48,7 +46,7 @@ class SearchBar extends React.Component<Props, State> {
                         id="text" 
                         placeholder="Search..." 
                     />
-                     {/* <button type="submit" onClick={ event => this.setState(event.target.value)} className="searchButton h2" >Search</button> */}
+                    
                     <button type="submit" className="searchButton h2" >Search</button>
                 </form>
             {/* https://www.digitalocean.com/community/tutorials/how-to-build-a-photo-search-app-with-react-using-the-unsplash-api */}
@@ -66,29 +64,5 @@ class SearchBar extends React.Component<Props, State> {
         
     } 
 }
-
-
-
-// const rootStyle: CSSProperties = {
-//     display: "flex",
-//     justifyContent: "space-around",
-//     alignItems: "center",
-//     position: "absolute",
-//     background: "white",
-//     width: "40rem",
-//     height: "5rem",
-//     margin: "2rem",
-//     borderRadius: "100px",
-
-
-// }
-
-// class Foo extends Component {
-//  queryOnChange = () =>{
-
-//  }
-// }
-
-
 
 export default SearchBar;
