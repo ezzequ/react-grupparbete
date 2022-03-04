@@ -1,12 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Board from "./Board";
 import "./Sidebar.css";
-import { FaBars } from "react-icons/fa";
 import ProfilePic from "./ProfilePic";
 
 function Sidebar() {
   const [components, setComponents] = useState<string[]>([]);
   const [title, setTitle] = useState("");
+
+  useEffect(() => {
+    const inputData = localStorage.getItem("test");
+    if (inputData) {
+      setComponents(JSON.parse(inputData));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("test", JSON.stringify(components));
+  });
 
   function addComponent() {
     setComponents([...components, title]);
@@ -18,7 +28,6 @@ function Sidebar() {
 
   return (
     <nav className="sidebar w fl-10">
-      {/* <FaBars /> */}
       <ProfilePic />
       <h3 className="title"></h3>
       {/* <h3 className="title">📌 My boards</h3> */}
@@ -32,8 +41,8 @@ function Sidebar() {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
-      <button className=" button br-pill bg-black-20 bn black" onClick={addComponent}  id={title}>
-        {/* ➕ New board */} post Comment
+      <button className=" button br-pill bn " onClick={addComponent} id={title}>
+        {/* ➕ New board */} Post comment
       </button>
 
       {components.map((component, i) => (
