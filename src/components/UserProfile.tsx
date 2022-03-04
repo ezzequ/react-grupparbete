@@ -1,17 +1,38 @@
 
-import { createContext } from "react";
-import ProfilePicture from "../assets/ProfilePic.png"
+// import { Component } from "react";
+// import { isPropertySignature } from "typescript";
+// import monkey from '../images/money.png'
 
-const UserProfile = () => {
+
+// interface Props {}
+
+// interface State {
+//     name: string,
+//     username: string,
+//     profilePicture: string
+// }
+
+// class UserProfile extends Component<Props, State> {
     
- return {
-     name: "Muffin'",
-     username: "SuperMuffin'",
-     profilePicture: {ProfilePicture}
- }
-}
+//     constructor(props: Props) {
+//         super(props),
+//         this.state = {
+//             name: "Muffin'",
+//             username: "SuperMuffin'",
+//             profilePicture: monkey
+//         },
+//     }
 
-//const UserContext = createContext(null);
+//     render() {
+//         return (
+//         <div className="h3 w3 br-100 center">
+//             <img className="h3 w3 br-100 center ba" src={monkey} alt="monkey" />
+//         </div>
+//         )
+//     }
 
-
-export default UserProfile;
+// }
+    function UserProfile() {
+        return 
+    }
+ export default UserProfile;
