@@ -12,6 +12,7 @@ interface Props {
 }
 interface State {
     imagesData: any[];
+    isHoverd: boolean
 }
 
 
@@ -35,6 +36,7 @@ class PhotoCardCollection extends Component<Props, State> {
         super(props);
         this.state = { 
             imagesData: [],
+            isHoverd: false
      };
     }
 
@@ -73,12 +75,14 @@ class PhotoCardCollection extends Component<Props, State> {
             
             <div style={photoContainerStyle}>
                 {this.state.imagesData.map((imageData) => 
-                    <div style={imgStyle} key={imageData.id} className="photo-card bg-light-grey br1 grow ma2 shadow-5 fr br3">
+                    <div style={imgStyle} key={imageData.id} className="photo-card bg-light-grey br1 grow ma2 shadow-5 fr br3" >
+                    {/* onMouseEnter={() => this.setState({isHoverd: true})} onMouseLeave={() => this.setState({isHoverd: false})} > */}
                         
-                            <HooverDiv imageData={{
-                                alt_description: imageData.alt_description,
-                            }} children={ButtonAdd}></HooverDiv>
-                    
+                        {/* {this.state.isHoverd &&  */}
+
+                            <HooverDiv imageData={{alt_description: imageData.alt_description}} children={ButtonAdd} />   
+                        {/* } */}
+                            
                         <img  id={imageData.id} src={imageData.urls.regular} alt={imageData.alt_description} className="br3" width="100%" height={imageData.Height} />
                     </div>
                 )}
@@ -95,6 +99,7 @@ class PhotoCardCollection extends Component<Props, State> {
 
 
 const photoContainerStyle: CSSProperties = {
+    marginTop: "2rem",
     width: "100%",
     height: "100vh",
     display: "grid",
@@ -106,6 +111,8 @@ const photoContainerStyle: CSSProperties = {
 const imgStyle: CSSProperties = {
     gridRowStart: "",
     //gridRowEnd: `span 30`
+    position: "relative",
+    
 
 
 }
