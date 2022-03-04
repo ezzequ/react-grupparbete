@@ -1,8 +1,7 @@
-
+import { CSSProperties, useState } from 'react';
+import { isWhiteSpaceLike } from 'typescript';
 import './Buttonstyle.css'
-import ButtonAdd from "./ButtonAdd";
-// import PhotoCard from "./PhotoCard";
-
+import Sidebar from './Sidebar';
 
 interface Props {
   imageData: {
@@ -12,27 +11,29 @@ interface Props {
 }
 
 export default function HooverDiv(props: Props) {
- 
-  
+ const [show, setShow] = useState(false)
+ const [isHoverd, setIsHoverd] = useState(false)
+
     return (
-      <div className="HooverDiv hoover-div absolute">
-        <div
-          className="bg-black-50 br3 center tc white shadow-5"
-          onClick={() => console.log("apa")}
-        >
-          <p>{props.imageData.alt_description}</p>
-          <hr className="bb bg-white white br2"></hr>
-          <ButtonAdd
-            imageData={{
-              alt_description: "",
-            }}
-            children={props.children}
-          />
-          
-        </div>
+      <div 
+      onMouseEnter={() => setIsHoverd(true)} 
+      onMouseLeave={() => setIsHoverd(false)} 
+      style={{width: "100%", height: "100%", position: "absolute"}}
+      >
+
+          { isHoverd !== false && 
+            <div className="HooverDiv hoover-div absolute w-100 bg-black-20 center tc white shadow-5" >
+                <div className=" br3" onClick={() => console.log("apa")}>
+                  <p>{props.imageData.alt_description}</p>
+                </div>
+              <div>
+                <button className="bg-black-10 bn br-pill pa1 white" onClick={()=>setShow(!show)}>{show ? ' Hide comments ' : ' Show comment section '}</button>
+                { show && 
+                <Sidebar></Sidebar> }
+              </div>
+            </div> }
       </div>
     );
   }
   
- 
   
