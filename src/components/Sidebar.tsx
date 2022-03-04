@@ -29,10 +29,6 @@ function Sidebar() {
   return (
     <nav className="sidebar w fl-10">
       <ProfilePic />
-      {/* <h3 className="title">📌 My boards</h3> */}
-      {/* <label className="label-title" htmlFor="title">
-        Title
-      </label> */}
       <input
         id="title"
         type="text"
@@ -41,7 +37,7 @@ function Sidebar() {
         onChange={(e) => setTitle(e.target.value)}
       />
       <button className=" button br-pill bn " onClick={addComponent} id={title}>
-        {/* ➕ New board */} Post comment
+        Post comment
       </button>
 
       {components.map((component, i) => (
