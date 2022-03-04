@@ -1,27 +1,35 @@
-import React from "react";
+import React, { Component } from "react";
 import Main from "./components/Main";
 import Sidebar from "./components/Sidebar";
-// import SearchBar from "./components/SearchBar";
-import Header from "./components/Header";
 import "./App.css";
-import SearchBar from "./components/SearchBar";
-// import HooverDiv from "./components/HooverDiv";
 
+interface Props {
 
-// import ButtonAdd from "./components/ButtonAdd";
+};
 
+interface State {
+  searchQuery: any,
+};
 
-function App() {
-  return (
+class App extends Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      searchQuery: "land"
+    }
+  }
+
+  render() {
+     return (
     <>
       <Main />
       <Sidebar />
-      {/* <HooverDiv imageData={{
-        alt_description: ""
-      }} children={ButtonAdd} /> */}
 
     </>
   );
 }
+
+}
+ 
 
 export default App;
