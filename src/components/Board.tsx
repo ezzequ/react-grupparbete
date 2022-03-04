@@ -12,7 +12,7 @@ function Board(props: Props) {
         ❌
       </p>
       <p>{props.text}</p>
-      <button className="btn">Go to board</button>
+      {/* <button className="btn">Go to board</button> */}
     </div>
   );
 }

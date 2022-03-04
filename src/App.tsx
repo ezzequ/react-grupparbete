@@ -1,6 +1,6 @@
+import Header from "./components/Header";
 import React, { Component } from "react";
 import Main from "./components/Main";
-import Sidebar from "./components/Sidebar";
 import "./App.css";
 
 interface Props {
@@ -22,9 +22,8 @@ class App extends Component<Props, State> {
   render() {
      return (
     <>
+    <Header></Header>
       <Main />
-      <Sidebar />
-
     </>
   );
 }
