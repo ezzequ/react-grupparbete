@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/react-grupparbete/static/css/main.37de6b5e.css",
+    "main.js": "/react-grupparbete/static/js/main.ca3b3be4.js",
+    "static/js/787.6b4f36f7.chunk.js": "/react-grupparbete/static/js/787.6b4f36f7.chunk.js",
+    "static/media/money.png": "/react-grupparbete/static/media/money.32aad60c6165bfbe19f7.png",
+    "index.html": "/react-grupparbete/index.html",
+    "main.37de6b5e.css.map": "/react-grupparbete/static/css/main.37de6b5e.css.map",
+    "main.ca3b3be4.js.map": "/react-grupparbete/static/js/main.ca3b3be4.js.map",
+    "787.6b4f36f7.chunk.js.map": "/react-grupparbete/static/js/787.6b4f36f7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.37de6b5e.css",
+    "static/js/main.ca3b3be4.js"
+  ]
+}
