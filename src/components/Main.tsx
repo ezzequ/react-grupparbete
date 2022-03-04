@@ -1,7 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import App from "../App";
-// import { Component, CSSProperties } from "react";
 import PhotoCardCollection from "./PhotoCardCollection";
 import "./photoCard.css";
 import SearchBar from "./SearchBar";

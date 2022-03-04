@@ -29,7 +29,6 @@ function Sidebar() {
   return (
     <nav className="sidebar w fl-10">
       <ProfilePic />
-      <h3 className="title"></h3>
       {/* <h3 className="title">📌 My boards</h3> */}
       {/* <label className="label-title" htmlFor="title">
         Title

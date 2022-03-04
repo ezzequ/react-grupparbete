@@ -1,6 +1,6 @@
 import React, { FormEvent } from "react";
 import ProfilePic from "./ProfilePic";
-// import UserProfile from "./UserProfile";
+
 
 interface Props {
   onQueryChange: (query: string) => any
@@ -34,32 +34,48 @@ class SearchBar extends React.Component<Props, State> {
 
   render() {
         console.log(this.state.query)
-        return(
-            <div className=" w-90 h3-m bg-white br-pill pa2 flex justify-around mw7 center ">
-                <form className="flex items-center justify-between"  onSubmit={e => this.handleSubmit(e)}  >
+        return (
+          <div className=" w-90 h3-m bg-white-50 br-pill pa2 ma2 flex justify-around mw7 center white">
+            <form
+              className="flex items-center justify-between"
+              onSubmit={(e) => this.handleSubmit(e)}
+            >
+              <input
+                className="h2 bg-white-60 ba br-pill fl w-60 pa3"
+                type="text"
+                name="query"
+                value={this.state.query}
+                onChange={(e) => this.setState({ query: e.target.value })}
+                id="text"
+                placeholder="Search..."
+              />
 
-                    <input className="h2 bg-ligtest-gray ba br-pill fl w-60 pa2" 
-                        type="text"
-                        name="query" 
-                        value={this.state.query}
-                        onChange={(e) => this.setState(({query : e.target.value})) }
-                        id="text" 
-                        placeholder="Search..." 
-                    />
-                    
-                    <button type="submit" className="searchButton h2" >Search</button>
-                </form>
+              <button
+                type="submit"
+                className="searchButton white h2 br-pill bg-black-10 bn pa2"
+              >
+                Search
+              </button>
+            </form>
             {/* https://www.digitalocean.com/community/tutorials/how-to-build-a-photo-search-app-with-react-using-the-unsplash-api */}
-                <div className="flex justify-around w4 ">
-                    <p>{/* username */}</p>
+            <div className="flex justify-around w4 ">
+              <p>{/* username */}</p>
 
-                    {this.state.isLoggedIn ? <ProfilePic /> : <button onClick={() => this.setState({isLoggedIn: true})}>Log In</button>}
+              {this.state.isLoggedIn ? (
+                <ProfilePic />
+              ) : (
+                <button
+                  className="searchButton white h2 br-pill bg-black-10 bn pa2"
+                  onClick={() => this.setState({ isLoggedIn: true })}
+                >
+                  Log In
+                </button>
+              )}
 
-                    <div className=" f3 flex items-center tracked">...</div>
-                </div>
+              <div className=" f3 flex items-center tracked">...</div>
             </div>
-
-        )
+          </div>
+        );
 
         
     } 
